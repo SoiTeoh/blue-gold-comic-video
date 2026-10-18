@@ -1,0 +1,11 @@
+{
+  "name": "srt-whiteboard-comic-renderer",
+  "private": true,
+  "scripts": {
+    "render:comic": "node scripts/render_comic.cjs"
+  },
+  "dependencies": {
+    "playwright-core": "1.64.0",
+    "@ffmpeg-installer/win32-x64": "4.1.0"
+  }
+}

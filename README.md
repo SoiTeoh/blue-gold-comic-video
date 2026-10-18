@@ -1,3 +1,30 @@
+# 蓝黄漫画手绘视频（个人改造版）
+
+本仓库在 [geeklee/srt-whiteboard-animation](https://github.com/geeklee/srt-whiteboard-animation) 的 MIT 许可项目基础上增加彩色漫画逐笔描线、手部跟随、原色上色和无字幕批量导出。保留原作者许可和原始 Python 工具。
+
+## Windows 新电脑快速使用
+
+安装 Node.js LTS、Git 和 Chrome 或 Edge，登录有权访问本私有仓库的 GitHub 账号，克隆本仓库并进入目录：
+
+```powershell
+npm.cmd ci
+node scripts/render_comic_batch.cjs --help
+```
+
+把有序竖版 PNG 放入 `jobs/视频01/images`，然后生成初稿：
+
+```powershell
+node scripts/render_comic_batch.cjs --images "jobs/视频01/images" --output-dir "outputs/视频01-v1"
+```
+
+成片为 `outputs/视频01-v1/final-silent.mp4`。默认无额外字幕、配音或音乐。素材与输出不进入 Git，新电脑需另行复制。默认预设为 `presets/blue-gold-comic-v1.json`。
+
+详见[操作手册](使用手册_蓝黄漫画手绘视频.md)、[渲染说明](COMIC_RENDERER.md)和[内容生产 SOP V3.2](读书视觉微故事内容生产流水线_SOP_V3.2.md)。
+
+---
+
+# 以下为上游项目原始说明
+
 # SRT 白板动画 Skill
 
 将 SRT 字幕转为按叙事顺序绘制的白板手绘视频Skill。它结合了**分区遮罩编排**与**流式笔迹绘制**：每个元素跟随字幕依次出场，笔尖在区域内连续落墨，再逐步添彩，最终导出 MP4。

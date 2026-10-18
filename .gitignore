@@ -11,3 +11,13 @@ venv/
 # OS
 Thumbs.db
 .DS_Store
+
+# Comic renderer dependencies and local experiments
+node_modules/
+experiments/
+jobs/
+outputs/
+.env
+.env.*
+!.env.example
+*.log
